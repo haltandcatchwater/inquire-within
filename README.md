@@ -1,13 +1,34 @@
 # Inquire Within
 
-A first-principles mind mapping tool where every node is an AI endpoint. Double-click to edit. Press `<` to expand into richer branches. Click 🤿 for a deep dive. The AI responds in tree form — you curate, prune, and explore.
+A mind mapping tool for structuring thoughts and projects — with optional AI that responds in tree form so you can explore, prune, and expand. Works great as a standalone mind mapper: no API key required, zero dependencies, just open the file and start organizing.
 
 ## Quick Start
 
 1. Download and unzip
-2. Copy `config.example.js` to `config.js` and add an API key (Groq is fast and cheap)
-3. Open `index.html` in any browser
-4. Start typing in the center node, or click **Inquire Within** in the sidebar
+2. Open `index.html` in any browser
+3. Start typing in the center node
+
+That's it. No install, no server, no account. For AI features, copy `config.example.js` to `config.js` and add an API key.
+
+## Two Ways to Use It
+
+**Standalone mind mapper (no AI)**
+- Double-click to edit nodes
+- Tab / Enter to build out trees
+- Drag and drop to rearrange
+- Five built-in themes (Light, Dark, Forest, Ocean, Sunset)
+- Link files by path or URL, export as PNG/JPEG/PDF/Markdown
+- Save to your browser's local storage, download as JSON
+- Collapse branches, zoom and pan large maps
+- All keyboard shortcuts work without AI
+
+**With AI (optional)**
+- Copy `config.example.js` → `config.js`, add an API key
+- Click `<` on any node to expand with AI-generated synopses
+- Click 🤿 for a prose deep dive overlay
+- Switch models in the sidebar (Groq, DeepSeek, Claude, GPT-4o)
+- AI responses become part of your map — you edit, delete, and build on them
+- Use **Inquire Within** to generate an entire map from a prompt
 
 ## Keyboard Shortcuts
 
@@ -24,18 +45,16 @@ A first-principles mind mapping tool where every node is an AI endpoint. Double-
 
 ## Features
 
-- **AI-native** — Every node can be expanded by AI. Click `<` for tree branches, 🤿 for prose deep dives
-- **Multi-model** — Switch between Groq, DeepSeek, Claude, and GPT-4o in the sidebar
-- **Semi-deep dives** — Node expansions produce rich synopsis paragraphs, not one-word labels
-- **Glass UI** — Dark theme with frosted glass nodes, animated thinking indicators
+- **Glass UI** — Dark theme with frosted glass nodes, five built-in themes
 - **File linking** — Link local files or Drive/Dropbox URLs to any node
-- **Markdown export** — Download your mind map as .md for LLM handoff
+- **Export** — PNG, JPEG, PDF, Markdown, and JSON
 - **PWA** — Install to desktop, works offline
-- **Zero dependencies** — One HTML file, one CSS file, one JS file. No npm, no build step, no server
+- **AI-native** — Optional AI expansion on every node, multiple model support
+- **Zero dependencies** — One folder, no npm, no build step, no server
 
 ## API Keys
 
-Get an API key from [Groq](https://console.groq.com) (fast, dirt cheap — fractions of a cent per request). Paste it into `config.js` on the first profile line. More keys for other providers go in the same file or in Settings (🎨).
+For AI features only. Get an API key from [Groq](https://console.groq.com) (fast, dirt cheap — fractions of a cent per request). Paste it into `config.js` on the first profile line. More keys in Settings (🎨).
 
 ## Sharing
 
@@ -43,4 +62,4 @@ The folder IS the app. Zip it and email it. Delete `config.js` before sharing �
 
 ## License
 
-**PolyForm Shield** — Free for personal, academic, and non-commercial use. Businesses using this tool to generate revenue need a commercial license. Contact the repo owner for terms.
+**PolyForm Shield** — Free for personal, academic, and non-commercial use. Businesses using this tool to generate revenue need a commercial license.
