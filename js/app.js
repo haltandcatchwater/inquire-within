@@ -2097,8 +2097,7 @@ class App {
     const child = this.mindmap.addChild(parentId);
     if (child) {
       this.selectNode(child.id);
-      this.autoLayout();
-      // Auto-start editing the new node
+      this.autoLayout(true); // preserve zoom
       setTimeout(() => this.startInlineEdit(child.id), 100);
     }
   }
@@ -2112,7 +2111,7 @@ class App {
     const sibling = this.mindmap.addSibling(this.selectedNodeId);
     if (sibling) {
       this.selectNode(sibling.id);
-      this.autoLayout();
+      this.autoLayout(true); // preserve zoom
       setTimeout(() => this.startInlineEdit(sibling.id), 100);
     }
   }
@@ -2141,10 +2140,10 @@ class App {
     }
   }
 
-  autoLayout() {
+  autoLayout(skipViewBox) {
     this.mindmap.autoLayoutEnabled = true;
     this.positions = LayoutEngine.layout(this.mindmap);
-    this._updateAll();
+    this._updateAll(skipViewBox);
     this._updateModified();
   }
 
