@@ -1364,7 +1364,6 @@ class InteractionManager {
     else if (ctrl && e.key === 'v') { e.preventDefault(); app.pasteNode(); }
     else if (e.key === 'Tab') {
       e.preventDefault();
-      app.toast('Tab pressed — selected: ' + (app.selectedNodeId ? app.mindmap.findNode(app.selectedNodeId)?.text : 'none'), 'success');
       if (!app.selectedNodeId) {
         app.selectNode(app.mindmap.root.id);
       }
@@ -2093,11 +2092,14 @@ class App {
 
   addChildNode() {
     const parentId = this.selectedNodeId || this.mindmap.root.id;
+    // Auto-expand if parent is collapsed so the new child is visible
+    const parent = this.mindmap.findNode(parentId);
+    if (parent && parent.collapsed) parent.collapsed = false;
     this._pushUndo();
     const child = this.mindmap.addChild(parentId);
     if (child) {
       this.selectNode(child.id);
-      this.autoLayout(true); // preserve zoom
+      this.autoLayout(true);
       setTimeout(() => this.startInlineEdit(child.id), 100);
     }
   }
