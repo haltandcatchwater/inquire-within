@@ -1,0 +1,13 @@
+# User data and personal files
+config.js
+*.json
+!manifest.json
+!package.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
