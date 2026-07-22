@@ -1364,15 +1364,11 @@ class InteractionManager {
     else if (ctrl && e.key === 'v') { e.preventDefault(); app.pasteNode(); }
     else if (e.key === 'Tab') {
       e.preventDefault();
+      app.toast('Tab pressed — selected: ' + (app.selectedNodeId ? app.mindmap.findNode(app.selectedNodeId)?.text : 'none'), 'success');
       if (!app.selectedNodeId) {
         app.selectNode(app.mindmap.root.id);
       }
-      const before = app.mindmap.countNodes();
       app.addChildNode();
-      const after = app.mindmap.countNodes();
-      if (after <= before) {
-        app.toast('Tab: child not added — parent ID: ' + (app.selectedNodeId || 'null'), 'warning');
-      }
     }
     else if (e.key === 'Enter') { e.preventDefault(); app.addSiblingNode(); }
     else if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); app.deleteSelectedNode(); }
