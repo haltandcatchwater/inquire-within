@@ -2750,8 +2750,9 @@ Rules: 3-5 children MAXIMUM. Text must be informative standalone synopses. Notes
 
   _showWalkthrough() {
     const steps = [
-      { emoji: '👋', title: 'Your Command Center', text: 'Create, save, and manage mind maps from the sidebar. Switch AI models at the bottom.' },
-      { emoji: '💡', title: 'Inquire Within', text: 'The center node is your starting point. Type a question and press Enter — the AI responds in tree form.' },
+      { emoji: '👋', title: 'Welcome to Inquire Within', text: 'A mind mapping tool for structuring thoughts and projects. <br><br><b>Without AI:</b> build trees, link files, export, save — a clean way to organize anything.<br><br><b>With AI:</b> add an API key in Settings, and every node becomes an AI endpoint. Click <b>&lt;</b> to expand branches, <b>🤿</b> for deep dives.' },
+      { emoji: '🏗️', title: 'Your Command Center', text: 'Create, save, and manage mind maps from the left sidebar. Switch AI models at the bottom. No AI key? You can still do everything except AI expansion.' },
+      { emoji: '💡', title: 'Inquire Within', text: 'The center node is your starting point. Type a question, click <b>&lt;</b>, or press Enter — the AI responds in tree form. Or just start building your own tree manually.' },
       { emoji: '🔍', title: 'Expand & Dive', text: 'Click <b>&lt;</b> on any node to expand with AI synopses. Click <b>🤿</b> for a prose deep dive overlay.' },
       { emoji: '⌨️', title: 'Keyboard Shortcuts', text: '<b>Tab</b> adds a child. <b>Enter</b> adds a sibling. <b>Double-click</b> to edit. <b>Ctrl+S</b> to save. <b>Scroll</b> to zoom.' },
       { emoji: '✅', title: 'You\'re All Set', text: 'Add an API key in <b>Settings (🎨)</b> or in <b>config.js</b>. Groq is fast and cheap. Enjoy!' }
