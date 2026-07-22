@@ -1362,7 +1362,14 @@ class InteractionManager {
     else if (ctrl && e.key === 'x') { e.preventDefault(); app.cutNode(); }
     else if (ctrl && e.key === 'c') { e.preventDefault(); app.copyNode(); }
     else if (ctrl && e.key === 'v') { e.preventDefault(); app.pasteNode(); }
-    else if (e.key === 'Tab') { e.preventDefault(); app.addChildNode(); }
+    else if (e.key === 'Tab') {
+      e.preventDefault();
+      if (!app.selectedNodeId) {
+        // No selection — add child to root as fallback
+        app.selectNode(app.mindmap.root.id);
+      }
+      app.addChildNode();
+    }
     else if (e.key === 'Enter') { e.preventDefault(); app.addSiblingNode(); }
     else if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); app.deleteSelectedNode(); }
     else if (e.key === 'F2') { e.preventDefault(); app.startInlineEdit(app.selectedNodeId); }
