@@ -465,7 +465,7 @@ class SVGRenderer {
         quoteEl.setAttribute('font-size', '12');
         quoteEl.setAttribute('font-style', 'italic');
         quoteEl.setAttribute('font-family', 'Segoe UI, system-ui, sans-serif');
-        quoteEl.textContent = 'Let the retardmaxxing begin';
+        quoteEl.textContent = 'Let the tardmaxxing begin';
         this.nodesLayer.appendChild(quoteEl);
       }
     }
@@ -2439,7 +2439,7 @@ class App {
     this.modalOverlay.classList.remove('hidden');
     document.getElementById('modal-title').textContent = 'TardMaxx';
     document.getElementById('modal-body').innerHTML = `
-      <p style="text-align:center;color:var(--text-secondary);font-size:13px;margin-bottom:12px;font-style:italic;">Let the retardmaxxing begin</p>
+      <p style="text-align:center;color:var(--text-secondary);font-size:13px;margin-bottom:12px;font-style:italic;">Let the tardmaxxing begin</p>
       <textarea id="ai-prompt" rows="3" placeholder="What do you want to explore?" style="width:100%;padding:12px;border:1px solid var(--border-color);border-radius:8px;background:var(--bg-primary);color:var(--text-primary);font-size:14px;font-family:var(--font-sans);resize:vertical;line-height:1.5;"></textarea>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;" id="ai-suggestions">
         <span class="ai-chip" data-prompt="Explain the key concepts of">Explain a concept</span>
