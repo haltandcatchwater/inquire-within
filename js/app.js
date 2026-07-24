@@ -1381,6 +1381,7 @@ class InteractionManager {
     else if (ctrl && e.key === 'v') { e.preventDefault(); app.pasteNode(); }
     else if (e.key === 'Tab') {
       e.preventDefault();
+      e.stopImmediatePropagation();
       if (!app.selectedNodeId) {
         app.selectNode(app.mindmap.root.id);
       }
@@ -1960,11 +1961,11 @@ class App {
         this._cancelInlineEdit();
       } else if (e.key === 'Tab') {
         e.preventDefault();
+        e.stopImmediatePropagation();
         const editingId = this.renderer.editingNodeId;
         this._finishInlineEdit();
         if (editingId) {
-          this.selectNode(editingId);
-          this.addChildNode();
+          setTimeout(() => { this.selectNode(editingId); this.addChildNode(); }, 50);
         }
       }
     });
