@@ -1089,15 +1089,6 @@ class InteractionManager {
       this.app.toggleCollapse(collapseEl.dataset.nodeId);
       return;
     }
-    // Deep dive (scuba) icon
-    const diveEl = e.target.closest('[data-action="deep-dive"]');
-    if (diveEl) {
-      e.preventDefault();
-      e.stopPropagation();
-      this.app._startDeepDive(diveEl.dataset.nodeId);
-      return;
-    }
-
     // AI expand sparkle — walk up to find the data-action attribute
     const sparkleEl = e.target.closest('[data-action="ai-expand"]');
     if (sparkleEl) {
@@ -2943,6 +2934,7 @@ Rules: 3-5 children MAXIMUM. Text must be informative standalone synopses. Notes
       case 'paste': this.pasteNode(); break;
       case 'add-image': this._addImageToSelected(); break;
       case 'add-file': this._linkFileToSelected(); break;
+      case 'deep-dive': if (this.selectedNodeId) this._startDeepDive(this.selectedNodeId); break;
       case 'change-color': this._changeNodeColor(); break;
       case 'collapse': if (this.selectedNodeId) this.toggleCollapse(this.selectedNodeId); break;
       case 'delete': this.deleteSelectedNode(); break;
