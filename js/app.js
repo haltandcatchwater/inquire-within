@@ -1373,6 +1373,7 @@ class InteractionManager {
     else if (e.key === 'Tab') {
       e.preventDefault();
       e.stopImmediatePropagation();
+      console.log('Tab keydown fired, target:', e.target.tagName, e.target.className, 'selected:', app.selectedNodeId);
       if (!app.selectedNodeId) {
         app.selectNode(app.mindmap.root.id);
       }
@@ -2685,6 +2686,7 @@ Rules: 3-5 children MAXIMUM. Text must be informative standalone synopses. Notes
 
   /** Deep dive — shows prose response in an overlay panel */
   async _startDeepDive(nodeId) {
+    console.log('_startDeepDive called for node:', nodeId, new Error().stack);
     const node = this.mindmap.findNode(nodeId);
     if (!node) return;
     const profile = this._activeProfile();
